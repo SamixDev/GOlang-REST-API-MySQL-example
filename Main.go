@@ -11,7 +11,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-//Tag structure for your database
+//User Tag structure for your database
 type User struct {
 	ID      int    `json:"id"`
 	Name    string `json:"name"`
@@ -37,7 +37,7 @@ func dbConn() (db *sql.DB) {
 
 }
 
-//View all the records
+//Index func to view all the records
 func Index(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	db := dbConn()
